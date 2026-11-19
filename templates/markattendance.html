@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block contain %}
+
+    <div class="max-w-7xl mx-auto px-6 py-8">
+
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+
+            <div>
+
+                <p class="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-1">
+                    Attendance Management
+                </p>
+
+                <h1 class="text-3xl font-bold text-white">
+                    Mark Attendance
+                </h1>
+
+                <p class="text-slate-400 mt-1">
+                    Select attendance status for each student.
+                </p>
+
+            </div>
+
+            <a href="/attendance"
+                class="mt-4 md:mt-0 bg-slate-800 border border-slate-700 hover:bg-slate-700 text-white px-5 py-2.5 rounded-xl font-semibold transition">
+
+                <i class="bi bi-list-check mr-2"></i>
+                Attendance List
+
+            </a>
+
+        </div>
+
+
+        <!-- Attendance Table -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-xl overflow-hidden">
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full">
+
+                    <thead class="bg-slate-950 border-b border-slate-800">
+
+                        <tr>
+
+                            <th class="px-6 py-4 text-left text-slate-400 font-semibold">
+                                #
+                            </th>
+
+                            <th class="px-6 py-4 text-left text-slate-400 font-semibold">
+                                Student Name
+                            </th>
+
+                            <th class="px-6 py-4 text-center text-slate-400 font-semibold">
+                                Present
+                            </th>
+
+                            <th class="px-6 py-4 text-center text-slate-400 font-semibold">
+                                Absent
+                            </th>
+
+                            <th class="px-6 py-4 text-center text-slate-400 font-semibold">
+                                Date
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr class="border-b border-slate-800 hover:bg-slate-800/50 transition">
+
+                            <td class="px-6 py-4 text-slate-400">
+                                1
+                            </td>
+
+                            <td class="px-6 py-4 font-medium text-white">
+                                Rahul Patel
+                            </td>
+
+
+                            <td class="px-6 py-4 text-center">
+
+                                <label class="inline-flex items-center justify-center cursor-pointer">
+
+                                    <input
+                                        type="radio"
+                                        name="rahul"
+                                        class="w-5 h-5 accent-emerald-500 cursor-pointer">
+
+                                </label>
+
+                            </td>
+
+
+                            <td class="px-6 py-4 text-center">
+
+                                <label class="inline-flex items-center justify-center cursor-pointer">
+
+                                    <input
+                                        type="radio"
+                                        name="rahul"
+                                        class="w-5 h-5 accent-red-500 cursor-pointer">
+
+                                </label>
+
+                            </td>
+
+
+                            <td class="px-6 py-4 text-center">
+
+                                <input
+                                    type="date"
+                                    class="bg-slate-800 border border-slate-700 text-white rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition">
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- Action Buttons -->
+
+        <div class="mt-8 flex justify-end gap-4">
+
+            <button
+                class="bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-300 px-6 py-2.5 rounded-xl font-semibold transition">
+
+                <i class="bi bi-x-circle mr-2"></i>
+                Cancel
+
+            </button>
+
+
+            <button
+                class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2.5 rounded-xl font-semibold shadow-lg shadow-blue-900/20 transition">
+
+                <i class="bi bi-check-circle-fill mr-2"></i>
+                Save Attendance
+
+            </button>
+
+        </div>
+
+    </div>
+
+{% endblock contain %}

@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% block contain %}
+
+    <div class="max-w-4xl mx-auto px-6 py-8">
+
+        <!-- Header -->
+
+        <div class="mb-8">
+
+            <p class="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-1">
+                Student Management
+            </p>
+
+            <h1 class="text-3xl font-bold text-white">
+                Student Details
+            </h1>
+
+            <p class="text-slate-400 mt-1">
+                View complete information about the student.
+            </p>
+
+        </div>
+
+
+        <!-- Student Card -->
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden">
+
+
+            <!-- Cover -->
+
+            <div class="h-36 bg-gradient-to-r from-blue-600 to-indigo-700 relative">
+
+                <div class="absolute inset-0 bg-blue-900/20"></div>
+
+            </div>
+
+
+            <!-- Profile -->
+
+            <div class="flex flex-col items-center -mt-16 px-6 relative">
+
+                <img
+                    src="/media/{{s.image}}"
+                    class="w-32 h-32 rounded-full border-4 border-slate-900 object-cover shadow-xl bg-slate-800"
+                >
+
+                <h2 class="text-2xl font-bold text-white mt-4">
+                    {{s.name}}
+                </h2>
+
+                <div class="flex items-center gap-2 mt-2">
+
+                    <i class="bi bi-mortarboard-fill text-blue-400"></i>
+
+                    <p class="text-slate-400">
+                        {{s.course}} Student
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Student Information -->
+
+            <div class="p-8">
+
+
+                <div class="flex items-center gap-3 mb-6">
+
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+
+                        <i class="bi bi-person-vcard-fill text-xl text-blue-400"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="text-xl font-semibold text-white">
+                            Personal Information
+                        </h3>
+
+                        <p class="text-slate-500 text-sm">
+                            Student basic details
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid md:grid-cols-2 gap-4">
+
+
+                    <!-- Name -->
+
+                    <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+
+                        <p class="text-slate-500 text-sm mb-1">
+                            Name
+                        </p>
+
+                        <p class="font-semibold text-lg text-white">
+                            {{s.name}}
+                        </p>
+
+                    </div>
+
+
+                    <!-- Gender -->
+
+                    <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+
+                        <p class="text-slate-500 text-sm mb-1">
+                            Gender
+                        </p>
+
+                        <p class="font-semibold text-lg text-white">
+                            {{s.gender}}
+                        </p>
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+
+                        <p class="text-slate-500 text-sm mb-1">
+                            Phone
+                        </p>
+
+                        <p class="font-semibold text-lg text-white">
+                            {{s.phone}}
+                        </p>
+
+                    </div>
+
+
+                    <!-- City -->
+
+                    <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+
+                        <p class="text-slate-500 text-sm mb-1">
+                            City
+                        </p>
+
+                        <p class="font-semibold text-lg text-white">
+                            {{s.city}}
+                        </p>
+
+                    </div>
+
+
+                    <!-- Course -->
+
+                    <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+
+                        <p class="text-slate-500 text-sm mb-1">
+                            Course
+                        </p>
+
+                        <p class="font-semibold text-lg text-white">
+                            {{s.course}}
+                        </p>
+
+                    </div>
+
+
+                    <!-- Total Fees -->
+
+                    <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-5">
+
+                        <p class="text-slate-500 text-sm mb-1">
+                            Total Fees
+                        </p>
+
+                        <p class="font-semibold text-lg text-white">
+                            {{s.fees}}
+                        </p>
+
+                    </div>
+
+
+                    <!-- Paid Fees -->
+
+                    <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-5">
+
+                        <div class="flex items-center justify-between">
+
+                            <p class="text-slate-500 text-sm">
+                                Paid Fees
+                            </p>
+
+                            <i class="bi bi-check-circle-fill text-emerald-400"></i>
+
+                        </div>
+
+                        <p class="font-semibold text-lg text-emerald-400 mt-1">
+                            ₹35,000
+                        </p>
+
+                    </div>
+
+
+                    <!-- Remaining Fees -->
+
+                    <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5">
+
+                        <div class="flex items-center justify-between">
+
+                            <p class="text-slate-500 text-sm">
+                                Remaining Fees
+                            </p>
+
+                            <i class="bi bi-exclamation-circle-fill text-red-400"></i>
+
+                        </div>
+
+                        <p class="font-semibold text-lg text-red-400 mt-1">
+                            ₹15,000
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <div class="mt-8 pt-6 border-t border-slate-800">
+
+                    <div class="flex flex-wrap gap-3">
+
+
+                        <button
+                            class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 hover:bg-yellow-500 hover:text-white px-6 py-2.5 rounded-xl font-semibold transition">
+
+                            <i class="bi bi-pencil-fill mr-2"></i>
+                            Edit Student
+
+                        </button>
+
+
+                        <button
+                            class="bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-600 hover:text-white px-6 py-2.5 rounded-xl font-semibold transition">
+
+                            <i class="bi bi-trash-fill mr-2"></i>
+                            Delete Student
+
+                        </button>
+
+
+                        <button
+                            class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg shadow-blue-900/20 transition">
+
+                            <i class="bi bi-arrow-left mr-2"></i>
+                            Back
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock contain %}

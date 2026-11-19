@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block contain %}
+
+    <div class="max-w-7xl mx-auto px-6 py-8">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+
+            <div>
+
+                <p class="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-1">
+                    Attendance Management
+                </p>
+
+                <h1 class="text-3xl font-bold text-white">
+                    Attendance List
+                </h1>
+
+                <p class="text-slate-400 mt-1">
+                    Manage students attendance records
+                </p>
+
+            </div>
+
+
+            <a href="/mark_attendance"
+                class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl shadow-lg shadow-blue-900/20 font-semibold transition">
+
+                <i class="bi bi-calendar-check-fill mr-2"></i>
+                Mark Attendance
+
+            </a>
+
+        </div>
+
+
+        <!-- Filters -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-xl p-6 mb-6">
+
+            <div class="grid md:grid-cols-4 gap-4">
+
+
+                <div class="relative">
+
+                    <i class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search Student..."
+                        class="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition">
+
+                </div>
+
+
+                <input
+                    type="date"
+                    class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition">
+
+
+                <select
+                    class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition">
+
+                    <option>All Status</option>
+                    <option>Present</option>
+                    <option>Absent</option>
+                    <option>Leave</option>
+
+                </select>
+
+
+                <button
+                    class="bg-blue-600 text-white rounded-xl hover:bg-blue-500 font-semibold shadow-lg shadow-blue-900/20 transition">
+
+                    <i class="bi bi-funnel-fill mr-2"></i>
+                    Filter
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Attendance Table -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-xl overflow-hidden">
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full">
+
+                    <thead class="bg-slate-950 border-b border-slate-800">
+
+                        <tr>
+
+                            <th class="px-6 py-4 text-left text-slate-400 font-semibold">
+                                #
+                            </th>
+
+                            <th class="px-6 py-4 text-left text-slate-400 font-semibold">
+                                Student Name
+                            </th>
+
+                            <th class="px-6 py-4 text-left text-slate-400 font-semibold">
+                                Date
+                            </th>
+                            <th class="px-6 py-4 text-left text-slate-400 font-semibold">
+                                Status
+                            </th>
+                            <th class="px-6 py-4 text-left text-slate-400 font-semibold">
+                                Marked By
+                            </th>
+                            <th class="px-6 py-4 text-center text-slate-400 font-semibold">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800 hover:bg-slate-800/50 transition">
+                            <td class="px-6 py-4 text-slate-400">
+                                2
+                            </td>
+                            <td class="px-6 py-4 font-medium text-white">
+                                Priya Shah
+                            </td>
+                            <td class="px-6 py-4 text-slate-400">
+                                26-06-2026
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="bi bi-x-circle-fill"></i>
+                                    Absent
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-slate-400">
+                                Admin
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <button class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg font-medium transition">
+                                    <i class="bi bi-pencil-fill mr-1"></i>
+                                    Edit
+                                </button>
+                                <button class="bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-600 hover:text-white px-4 py-2 rounded-lg font-medium ml-2 transition">
+                                    <i class="bi bi-trash-fill mr-1"></i>
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800 hover:bg-slate-800/50 transition">
+                            <td class="px-6 py-4 text-slate-400">
+                                3
+                            </td>
+                            <td class="px-6 py-4 font-medium text-white">
+                                Jay Mehta
+                            </td>
+                            <td class="px-6 py-4 text-slate-400">
+                                26-06-2026
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="bi bi-dash-circle-fill"></i>
+                                    Leave
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-slate-400">
+                                Admin
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <button class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 hover:bg-yellow-500 hover:text-white px-4 py-2 rounded-lg font-medium transition">
+                                    <i class="bi bi-pencil-fill mr-1"></i>
+                                    Edit
+                                </button>
+                                <button class="bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-600 hover:text-white px-4 py-2 rounded-lg font-medium ml-2 transition">
+                                    <i class="bi bi-trash-fill mr-1"></i>
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock contain %}

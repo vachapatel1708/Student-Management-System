@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+
+{% block contain %}
+  
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white relative overflow-hidden">
+
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_35%)]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-28 flex items-center justify-between relative z-10">
+
+            <div class="max-w-xl">
+
+                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/20 px-4 py-2 rounded-full text-sm mb-6 text-blue-300">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <span>Smart Education Platform</span>
+                </div>
+
+                <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+                    Student Management System
+                </h1>
+
+                <p class="text-lg lg:text-xl text-slate-300 mb-8 leading-relaxed">
+                    Manage students, courses, attendance, exams and reports
+                    efficiently from one powerful dashboard.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+
+                    <a href="/addstudent"
+                        class="bg-blue-600 text-white px-7 py-3.5 rounded-xl font-bold shadow-lg shadow-blue-900/30 hover:bg-blue-500 hover:-translate-y-1 transition duration-300">
+                        Add Student
+                    </a>
+
+                    <a href="/showlist"
+                        class="border border-slate-600 bg-slate-800/60 backdrop-blur-sm px-7 py-3.5 rounded-xl font-semibold text-slate-200 hover:bg-white hover:text-slate-900 hover:-translate-y-1 transition duration-300">
+                        View Students
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hidden md:block">
+
+                <div class="w-80 h-80 rounded-full bg-blue-500/10 border border-blue-400/10 flex items-center justify-center">
+
+                    <div class="w-64 h-64 rounded-full bg-gradient-to-br from-blue-600/20 to-indigo-600/20 border border-blue-400/10 flex items-center justify-center">
+
+                        <i class="bi bi-mortarboard-fill text-[150px] text-blue-400/70"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Dashboard Overview -->
+    <section class="bg-slate-950 px-10 py-20">
+
+        <div class="text-center mb-12">
+
+            <p class="text-blue-400 font-semibold uppercase tracking-wider text-sm mb-2">
+                Overview
+            </p>
+
+            <h2 class="text-4xl font-extrabold text-white">
+                Dashboard Overview
+            </h2>
+
+            <p class="text-slate-400 mt-3">
+                Everything you need to manage your students efficiently.
+            </p>
+
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-lg p-7 text-center hover:border-blue-500/40 hover:shadow-blue-950/30 hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center">
+                    <i class="bi bi-people-fill text-4xl text-blue-400"></i>
+                </div>
+
+                <h3 class="text-3xl font-extrabold mt-5 text-white">
+                    500+
+                </h3>
+
+                <p class="text-slate-400 mt-2">
+                    Students
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-lg p-7 text-center hover:border-emerald-500/40 hover:shadow-emerald-950/30 hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 flex items-center justify-center">
+                    <i class="bi bi-book-fill text-4xl text-emerald-400"></i>
+                </div>
+
+                <h3 class="text-3xl font-extrabold mt-5 text-white">
+                    25+
+                </h3>
+
+                <p class="text-slate-400 mt-2">
+                    Courses
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-lg p-7 text-center hover:border-orange-500/40 hover:shadow-orange-950/30 hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 mx-auto rounded-2xl bg-orange-500/10 flex items-center justify-center">
+                    <i class="bi bi-calendar-check-fill text-4xl text-orange-400"></i>
+                </div>
+
+                <h3 class="text-3xl font-extrabold mt-5 text-white">
+                    95%
+                </h3>
+
+                <p class="text-slate-400 mt-2">
+                    Attendance
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-lg p-7 text-center hover:border-purple-500/40 hover:shadow-purple-950/30 hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 mx-auto rounded-2xl bg-purple-500/10 flex items-center justify-center">
+                    <i class="bi bi-bar-chart-fill text-4xl text-purple-400"></i>
+                </div>
+
+                <h3 class="text-3xl font-extrabold mt-5 text-white">
+                    100%
+                </h3>
+
+                <p class="text-slate-400 mt-2">
+                    Reports
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="bg-slate-900 py-20">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div class="text-center mb-14">
+
+                <p class="text-blue-400 font-semibold uppercase tracking-wider text-sm mb-2">
+                    Powerful Features
+                </p>
+
+                <h2 class="text-4xl font-extrabold text-white">
+                    Features
+                </h2>
+
+                <p class="text-slate-400 mt-3">
+                    Simple tools designed to make student management easier.
+                </p>
+
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="group bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-950/20 hover:-translate-y-2 transition duration-300">
+
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-600 transition duration-300">
+
+                        <i class="bi bi-person-plus-fill text-3xl text-blue-400 group-hover:text-white transition"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold mt-6 text-white">
+                        Student Management
+                    </h3>
+
+                    <p class="text-slate-400 mt-3 leading-relaxed">
+                        Add, update and manage student records easily.
+                    </p>
+
+                    <div class="mt-6 text-blue-400 text-sm font-semibold flex items-center gap-2">
+                        Learn More
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="group bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-950/20 hover:-translate-y-2 transition duration-300">
+
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-600 transition duration-300">
+
+                        <i class="bi bi-journal-bookmark-fill text-3xl text-emerald-400 group-hover:text-white transition"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold mt-6 text-white">
+                        Course Management
+                    </h3>
+
+                    <p class="text-slate-400 mt-3 leading-relaxed">
+                        Organize courses and assign students efficiently.
+                    </p>
+
+                    <div class="mt-6 text-emerald-400 text-sm font-semibold flex items-center gap-2">
+                        Learn More
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="group bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 hover:-translate-y-2 transition duration-300">
+
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-600 transition duration-300">
+
+                        <i class="bi bi-file-earmark-bar-graph-fill text-3xl text-purple-400 group-hover:text-white transition"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold mt-6 text-white">
+                        Reports & Analytics
+                    </h3>
+
+                    <p class="text-slate-400 mt-3 leading-relaxed">
+                        Generate attendance and exam reports instantly.
+                    </p>
+
+                    <div class="mt-6 text-purple-400 text-sm font-semibold flex items-center gap-2">
+                        Learn More
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock contain %}

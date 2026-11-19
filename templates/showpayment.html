@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block contain %}
+
+    <div class="max-w-7xl mx-auto px-6 py-10">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-xl p-8">
+            <div class="text-center mb-10">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                    <i class="bi bi-credit-card-fill text-3xl text-blue-400"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-white">
+                    Payment Details
+                </h1>
+                <p class="text-slate-400 mt-2">
+                    View and manage student payment records
+                </p>
+            </div>
+            <form class="grid md:grid-cols-3 gap-6 mb-10 bg-slate-950 border border-slate-800 rounded-2xl p-6">
+                <div>
+                    <label class="block text-lg font-semibold mb-2 text-slate-300">
+                        From Date
+                    </label>
+                    <input type="date"
+                        class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition">
+                </div>
+                <div>
+                    <label class="block text-lg font-semibold mb-2 text-slate-300">
+                        To Date
+                    </label>
+                    <input type="date"
+                        class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition">
+                </div>
+                <div class="flex items-end">
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-500 shadow-lg shadow-blue-900/20 transition">
+                        <i class="bi bi-search mr-2"></i>
+                        Search
+                    </button>
+                </div>
+            </form>
+
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-slate-950 border-b border-slate-800">
+                            <th class="px-4 py-4 text-left text-slate-400 font-semibold">S.No</th>
+                            <th class="px-4 py-4 text-left text-slate-400 font-semibold">Student Name</th>
+                            <th class="px-4 py-4 text-left text-slate-400 font-semibold">Payment Amount</th>
+                            <th class="px-4 py-4 text-left text-slate-400 font-semibold">Date Paid</th>
+                            <th class="px-4 py-4 text-left text-slate-400 font-semibold">Taken By</th>
+                            <th class="px-4 py-4 text-left text-slate-400 font-semibold">Payment Method</th>
+                            <th class="px-4 py-4 text-center text-slate-400 font-semibold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for i in payment %}
+
+                        <tr class="border-b border-slate-800 hover:bg-slate-800/50 transition">
+
+                            <td class="px-4 py-4 text-slate-300 font-semibold">
+                                {{i.id}}
+                            </td>
+
+                            <td class="px-4 py-4 text-white font-medium">
+                                {{i.name}}
+                            </td>
+
+                            <td class="px-4 py-4 text-emerald-400 font-semibold">
+                                ₹{{i.payment_amount}}
+                            </td>
+
+                            <td class="px-4 py-4 text-slate-400">
+                                {{i.date}}
+                            </td>
+
+                            <td class="px-4 py-4 text-slate-400">
+                                {{i.taken_by}}
+                            </td>
+
+                            <td class="px-4 py-4">
+                                <span class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    {{i.payment_method}}
+                                </span>
+                            </td>
+
+                            <td class="px-4 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <a href="/studentdetail/{{i.id}}"
+                                        class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-600 hover:text-white w-9 h-9 rounded-lg flex items-center justify-center transition">
+                                        <i class="bi bi-eye-fill"></i>
+                                    </a>
+                                    <a href="/delete/{{i.id}}"
+                                        class="bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-600 hover:text-white w-9 h-9 rounded-lg flex items-center justify-center transition">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock contain %}

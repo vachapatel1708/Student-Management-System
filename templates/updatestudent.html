@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+
+{% block contain %}
+
+    <div class="max-w-5xl mx-auto py-10 px-6">
+
+        <!-- Header -->
+
+        <div class="mb-8">
+
+            <p class="text-yellow-400 text-sm font-semibold uppercase tracking-wider mb-1">
+                Student Management
+            </p>
+
+            <h1 class="text-3xl font-bold text-white">
+                Update Student
+            </h1>
+
+            <p class="text-slate-400 mt-1">
+                Update student information and records.
+            </p>
+
+        </div>
+
+
+        <!-- Main Card -->
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-8">
+
+
+            <!-- Form Heading -->
+
+            <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-800">
+
+                <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center">
+
+                    <i class="bi bi-pencil-square text-xl text-yellow-400"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 class="text-xl font-semibold text-white">
+                        Student Information
+                    </h2>
+
+                    <p class="text-slate-500 text-sm">
+                        Edit the details below and save your changes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+
+                    <!-- Student Name -->
+
+                    <div>
+
+                        <label class="block font-semibold mb-2 text-slate-300">
+
+                            <i class="bi bi-person-fill text-yellow-400 mr-1"></i>
+                            Student Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            value="{{s1.name}}"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
+                        >
+
+                    </div>
+
+
+                    <!-- Gender -->
+
+                    <div>
+
+                        <label class="block font-semibold mb-2 text-slate-300">
+
+                            <i class="bi bi-gender-ambiguous text-yellow-400 mr-1"></i>
+                            Gender
+
+                        </label>
+
+                        <select
+                            name="gender"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition">
+
+                            <option value="male" {% if student.gender == "male" %}selected{% endif %}>
+                                Male
+                            </option>
+
+                            <option value="female" {% if student.gender == "female" %}selected{% endif %}>
+                                Female
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div>
+
+                        <label class="block font-semibold mb-2 text-slate-300">
+
+                            <i class="bi bi-telephone-fill text-yellow-400 mr-1"></i>
+                            Phone Number
+
+                        </label>
+
+                        <input
+                            type="number"
+                            name="phone"
+                            value="{{s1.phone}}"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
+                        >
+
+                    </div>
+
+
+                    <!-- City -->
+
+                    <div>
+
+                        <label class="block font-semibold mb-2 text-slate-300">
+
+                            <i class="bi bi-geo-alt-fill text-yellow-400 mr-1"></i>
+                            City
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="city"
+                            value="{{s1.city}}"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
+                        >
+
+                    </div>
+
+
+                    <!-- Course -->
+
+                    <div>
+
+                        <label class="block font-semibold mb-2 text-slate-300">
+
+                            <i class="bi bi-book-fill text-yellow-400 mr-1"></i>
+                            Course
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="course"
+                            value="{{s1.course}}"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
+                        >
+
+                    </div>
+
+
+                    <!-- Fees -->
+
+                    <div>
+
+                        <label class="block font-semibold mb-2 text-slate-300">
+
+                            <i class="bi bi-cash-stack text-yellow-400 mr-1"></i>
+                            Fees
+
+                        </label>
+
+                        <input
+                            type="number"
+                            name="fees"
+                            value="{{s1.fees}}"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
+                        >
+
+                    </div>
+
+
+                    <!-- Paid Fees -->
+
+                    <div>
+
+                        <label class="block font-semibold mb-2 text-slate-300">
+
+                            <i class="bi bi-wallet2 text-yellow-400 mr-1"></i>
+                            Paid Fees
+
+                        </label>
+
+                        <input
+                            type="number"
+                            name="paidfees"
+                            value="{{s1.paidfees}}"
+                            class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
+                        >
+
+                    </div>
+
+
+                    <!-- Student Image -->
+
+                    <div>
+
+                        <label class="block font-semibold mb-2 text-slate-300">
+
+                            <i class="bi bi-image-fill text-yellow-400 mr-1"></i>
+                            Student Image
+
+                        </label>
+
+                        <div class="flex items-center gap-4 mb-3">
+
+                            <img
+                                src="/media/{{s1.image}}"
+                                class="w-20 h-20 object-cover rounded-xl border border-slate-700 shadow-lg"
+                            >
+
+                            <div>
+
+                                <p class="text-slate-400 text-sm">
+                                    Current Image
+                                </p>
+
+                                <p class="text-slate-600 text-xs mt-1">
+                                    Upload a new image to replace it
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            name="image"
+                            class="w-full bg-slate-800 border border-slate-700 text-slate-400 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="flex justify-center gap-4 mt-10 pt-6 border-t border-slate-800">
+
+
+                    <button
+                        type="submit"
+                        class="bg-yellow-500 hover:bg-yellow-400 text-slate-950 px-8 py-3 rounded-xl font-semibold shadow-lg shadow-yellow-900/20 transition">
+
+                        <i class="bi bi-pencil-square mr-2"></i>
+                        Update Student
+
+                    </button>
+
+
+                    <a
+                        href="/showlist"
+                        class="bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 px-8 py-3 rounded-xl font-semibold transition">
+
+                        <i class="bi bi-arrow-left mr-2"></i>
+                        Back
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+{% endblock contain %}
