@@ -1,19 +1,29 @@
+
 # Python cache
 __pycache__/
 *.py[cod]
 
-# Django database
-db.sqlite3
-
-# Virtual environment
+# Virtual environments
 venv/
 env/
 .venv/
 
-# Environment variables
+# Django database
+db.sqlite3
+db.sqlite3-journal
+
+# Environment variables and secrets
 .env
+.env.*
+
+# Static files collected for deployment
+staticfiles/
 
 # VS Code
 .vscode/
 
-# Media uploads (keep if you want these images on GitHub)
+# Private database export
+data_backup.json
+
+# Local database backup
+*.sqlite3
